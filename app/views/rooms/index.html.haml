@@ -1,0 +1,18 @@
+%h1 Rooms
+
+%table
+  %tr
+    %th Room Name
+    %th Seats
+    / %th photo
+  - @rooms.each do |room|
+    %tr
+      %td= room.room_name
+      %td= room.seats
+      %td= link_to 'Show', room
+      %td= link_to 'Edit', edit_room_path(room)
+      %td= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Room', new_room_path
+
+ 

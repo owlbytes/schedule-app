@@ -1,0 +1,23 @@
+%h1 Rooms
+
+%table
+  %tr
+    / %th photo
+    %th Room Name
+    %th Number of Seats
+    %th Room Type
+  %tr
+    %td= image_tag @room.room_photo
+    %td= @room.room_name
+    %td= @room.seats
+    %tf= @room.room_type
+   
+    
+%br/
+= link_to 'Edit', edit_room_path(@room)
+%br/
+|
+= link_to 'Destroy', @room, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+|
+= link_to 'New Room', new_room_path

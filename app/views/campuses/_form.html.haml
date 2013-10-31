@@ -1,0 +1,16 @@
+= form_for @campus do |f|
+
+  .field
+    = f.label :campus_name, 'Campus Name'
+    = f.text_field :campus_name
+  .field
+    = f.label :location, 'Campus Location'
+    = f.number_field :location
+  .field
+    = f. label :campus_photo, 'Campus Image'
+    = f. file_field :campus_photo
+  .field
+    = f.label :about, 'Course Description'
+    = f.text_field :about
+  .actions
+    = f.submit 'Save Campus Info'

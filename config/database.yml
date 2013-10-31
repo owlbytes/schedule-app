@@ -1,0 +1,18 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: schedule_app_development
+  
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: schedule_app_test
+
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: schedule_app_production
+  

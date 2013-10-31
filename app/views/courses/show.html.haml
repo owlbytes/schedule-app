@@ -1,0 +1,30 @@
+%h1= @course.course_name
+
+%table
+  %tr
+    / %th photo
+    %th Course Name
+    %th Date
+    %th Time
+    %th Instructor
+    %th Classroom
+    %th About
+
+    %tr
+      %td= image_tag @course.course_photo
+      %td= @course.course_name
+      %td= @course.date
+      %td= @course.time
+      %td= @course.instructor
+      %td= @course.room_id
+      %td= @course.about
+   
+
+%br/
+= link_to 'Edit', edit_course_path(@course)
+%br/
+|
+= link_to 'Destroy', @course, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+|
+= link_to 'New Course', new_course_path

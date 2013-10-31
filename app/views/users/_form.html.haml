@@ -1,0 +1,33 @@
+= form_for @user do |f|
+
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :phone
+    = f.text_field :phone
+  .field
+    = f.label :address
+    = f.text_field :address
+  .field 
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f. label :user_photo, 'Profile Photo'
+    = f. file_field :user_photo
+  .field
+    = f.label :background_info, 'Tell us more about yourself '
+    = f.text_field :background_info
+  .field
+    = f.radio_button :role, 'student'
+    = f.radio_button :role, 'instructor'
+    = f.radio_button :role, 'staff'
+    = f.radio_button :role, 'admin'
+  .actions
+    = f.submit 'Save User Information'
+     
+
+     

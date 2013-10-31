@@ -1,0 +1,24 @@
+%h1= @campus.campus_name
+
+%table
+  %tr
+    / %th photo
+    %th Campus Name
+    %th Location
+    %th Description
+
+  %tr
+    %td= image_tag @campus.campus_photo
+    %td= @campus.campus_name
+    %td= @campus.location
+    %td= @campus.about
+   
+
+%br/
+= link_to 'Edit', edit_campus_path(@campus)
+%br/
+|
+= link_to 'Destroy', @campus, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+|
+= link_to 'New Campus', new_campus_path

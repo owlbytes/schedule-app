@@ -21,6 +21,7 @@ class CoursesController < ApplicationController
 
   def edit
     @course = Course.find params[:id]
+    @instructors = User.where(role: :instructor)
   end
 
   def show
@@ -29,6 +30,7 @@ class CoursesController < ApplicationController
 
   def update
     @course = Course.find params[:id]
+    @course.update_attributes params[:course]
     redirect_to @course
   end
 

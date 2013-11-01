@@ -25,6 +25,7 @@ class CampusesController < ApplicationController
 
   def update
     @campus = Campus.find params[:id]
+    @campus.update_attributes params[:campus]
     redirect_to @campus
   end
 

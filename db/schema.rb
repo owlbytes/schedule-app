@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(:version => 20131029155632) do
 
   create_table "courses", :force => true do |t|
     t.text     "course_name"
-    t.string   "date"
-    t.string   "time"
+    t.date     "date"
+    t.time     "time"
     t.text     "about"
     t.string   "course_photo"
     t.integer  "room_id"

@@ -2,8 +2,8 @@ class CreateCourses < ActiveRecord::Migration
   def change
     create_table :courses do |t|
       t.text :course_name
-      t.string :date
-      t.string :time
+      t.date :date
+      t.time :time
       t.text :about
       t.string :course_photo
       t.integer :room_id #st

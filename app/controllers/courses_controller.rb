@@ -1,11 +1,9 @@
 class CoursesController < ApplicationController
-   load_and_authorize_resource except: [:index]
 
   def index
     page = params[:page] || 1
     per_page = 5
     @courses = Course.paginate(page: page, per_page: per_page).order(:created_at).all
-    authorize! :read, @courses
   end
 
   def new
@@ -17,7 +15,6 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new params[:course]
     @course.instructor_id = params[:instructor_id]
-    @course.room_name = params[:room_name]
     @course.save
     redirect_to @course
   end

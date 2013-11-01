@@ -7,14 +7,14 @@
     = f.label :seats
     = f.number_field :seats
   .field
-    = f. label :room_photo, 'Photo of Room'
-    = f. file_field :room_photo
+    = f.label :room_photo, 'Photo of Room'
+    = f.file_field :room_photo
   .field
-    = f.check_box_tag :room_type, 'classroom'
-    = f.check_box_tag :room_type, 'office'
-    = f.check_box_tag :room_type, 'event space'
-    = f.check_box_tag :room_type, 'co-working space'
-    = f.check_box_tag :room_type, 'common area'
+    = radio_button_tag :room_type, 'classroom'
+    = radio_button_tag :room_type, 'office'
+    = radio_button_tag :room_type, 'event space'
+    = radio_button_tag :room_type, 'co-working space'
+    = radio_button_tag :room_type, 'common area'
   .actions
     = f.submit 'Save Room Information'
 

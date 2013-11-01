@@ -18,9 +18,6 @@
   .field
     = f.label :instructor_id, 'Course Instructor'
     = select_tag :instructor_id, options_from_collection_for_select(@instructors, :id, :first_name)
-  .field
-    = f.label :room_id, 'Room'
-    = select_tag :room_id, options_from_collection_for_select(@rooms, :id, :room_name)
 
   .actions
     = f.submit 'Save Course Info'

@@ -5,15 +5,16 @@
     %th First Name
     %th Last Name
     %th Role
-    / %th photo
-  - @users.each do |user|
-    %tr
-      %td= user.first_name
-      %td= user.last_name
-      %td= user.role
-      %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+    - @users.each do |user|
+      %tr
+        %td= user.first_name
+        %td= user.last_name
+        %td= user.role
+        %td= link_to 'Show', user
+        %td= link_to 'Edit', edit_user_path(user)
+        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to 'New User', new_user_path
+
+= will_paginate @users
 

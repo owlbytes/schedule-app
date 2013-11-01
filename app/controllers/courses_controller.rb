@@ -1,10 +1,11 @@
 class CoursesController < ApplicationController
+   load_and_authorize_resource except: [:index]
+
   def index
     page = params[:page] || 1
     per_page = 5
-    @courses = Course.offset((page-1)*per_page)
-          .limit(per_page).order(:course_name).all
-
+    @courses = Course.paginate(page: page, per_page: per_page).order(:created_at).all
+    authorize! :read, @courses
   end
 
   def new

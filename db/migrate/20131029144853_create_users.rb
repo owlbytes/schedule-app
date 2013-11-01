@@ -9,8 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.text :user_photo
       t.text :background_info
       t.string :role #staff, student, instructor, etc. used for authetnication and authorization 
-    
-    t.timestamps
+      t.timestamps
 
     end 
   end 

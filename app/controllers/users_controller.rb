@@ -2,8 +2,7 @@ class UsersController < ApplicationController
   def index
     page = params[:page] || 1
     per_page = 5
-    @Users = User.offset((page-1)*per_page)
-          .limit(per_page).order(:first_name).all
+    @users = User.paginate(page: page, per_page: per_page).order(:created_at).all
   end
 
   def new
@@ -13,6 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new params[:user]
     @user.save
+    UserMailer.registration_confirmation(@user).deliver
     redirect_to @user
   end
 

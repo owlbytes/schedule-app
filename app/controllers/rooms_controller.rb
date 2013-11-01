@@ -2,9 +2,7 @@ class RoomsController < ApplicationController
   def index
     page = params[:page] || 1
     per_page = 5
-    @rooms = Room.offset((page-1)*per_page)
-          .limit(per_page).order(:room_name).all
-
+    @rooms = Room.paginate(page: page, per_page: per_page).order(:created_at).all
   end
 
   def new

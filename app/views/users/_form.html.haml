@@ -21,6 +21,12 @@
   .field
     = f.label :background_info, 'Tell us more about yourself '
     = f.text_field :background_info
+  .field 
+    = f.label :password
+    = f. password_field :password
+  .field
+    = f.label :password_confirmation
+    = f. password_field :password_confirmation
   .field
     = f.radio_button :role, 'student'
     = f.radio_button :role, 'instructor'

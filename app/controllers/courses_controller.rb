@@ -16,6 +16,7 @@ class CoursesController < ApplicationController
     @course = Course.new params[:course]
     @course.instructor_id = params[:instructor_id]
     @course.save
+    flash[:notice] = "Course Was Created"
     redirect_to @course
   end
 
@@ -31,12 +32,14 @@ class CoursesController < ApplicationController
   def update
     @course = Course.find params[:id]
     @course.update_attributes params[:course]
+    flash[:notice] = "Course Was Updated"
     redirect_to @course
   end
 
   def destroy
     @course = Course.find params[:id]
     @course.destroy
+    flash[:notice] = "Course Was Destroyed"
     redirect_to courses_url
   end
 

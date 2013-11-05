@@ -12,6 +12,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new params[:room]
     @room.save
+    flash[:notice] = "Room Was Created"
     redirect_to @room
   end
 
@@ -26,12 +27,14 @@ class RoomsController < ApplicationController
   def update
     @room = Room.find params[:id]
     @room.update_attributes params[:room]
+    flash[:notice] = "Room Was Updated"
     redirect_to @room
   end
 
   def destroy
     @room = Room.find params[:id]
     @room.destroy
+    flash[:notice] = "Room Was Destroyed"
     redirect_to rooms_url
   end
 

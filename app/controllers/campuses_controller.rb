@@ -12,6 +12,7 @@ class CampusesController < ApplicationController
   def create
     @campus = Campus.new params[:campus]
     @campus.save
+    flash[:notice] = "Campus Was Created"
     redirect_to @campus
   end
 
@@ -26,12 +27,14 @@ class CampusesController < ApplicationController
   def update
     @campus = Campus.find params[:id]
     @campus.update_attributes params[:campus]
+    flash[:notice] = "Campus Was Updated"
     redirect_to @campus
   end
 
   def destroy
     @campus = Campus.find params[:id]
     @campus.destroy
+    flash[:notice] = "Campus Was Destroyed"
     redirect_to campuses_url
   end
 

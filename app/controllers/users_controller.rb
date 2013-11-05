@@ -17,10 +17,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new params[:user]
-    @user.save
+      if @user.save
+        session[:user_id] = @user.id
+        redirect_to @user, notice: "Thanks for signing up and welcome to General Assembly!"
+      else
+        render :new
+      end
     UserMailer.registration_confirmation(@user).deliver
-    flash[:notice] = "User Was Created"
-    redirect_to @user
   end
 
   def edit
